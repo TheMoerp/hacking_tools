@@ -8,7 +8,7 @@ parser.add_argument('bytestream', help='bytestream you want to adapt. acceptable
 parser.add_argument('-s', '--swap', action="store_true", help='swap endianness')
 parser.add_argument('-d', '--delimiter', action="store_true", help='add the \\x delimiter')
 parser.add_argument('-r', '--remove', action="store_true", help='remove the \\x delimiter')
-parser.add_argument('-c', '--copy', action="store_true", help='copy the adapted bytestream to the clipboard')
+parser.add_argument('-c', '--copy', action="store_true", help='copy the adapted bytestream to the clipboard (only for Windows)')
 args = parser.parse_args()
 
 byte_stream = args.bytestream
@@ -54,7 +54,7 @@ else:
 # Prints adapted bytestream
 print(f"\nAdapted bytestream: {byte_stream}\n")
 
-# Copys adapted bytestream to the clipboard
+# Copys adapted bytestream to the clipboard (only works on Windows)
 if args.copy:
     pyperclip.copy(byte_stream)
     print("The adapted bytestream has been copied to the clipboard\n")
