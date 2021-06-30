@@ -19,6 +19,8 @@ del_check = False
 if "\\x" in byte_stream:
     del_check = True
 
+if byte_stream[0:2] == "0x":
+    byte_stream = byte_stream[2:]
 
 byte_list = []
 if not del_check:
