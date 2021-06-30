@@ -6,8 +6,8 @@ import pyperclip
 parser = argparse.ArgumentParser(description='Little tool to help building exploits')
 parser.add_argument('bytestream', help='bytestream you want to adapt. acceptable formats: 0xnn...nn, nn..nn, \\xnn...\\xnn')
 parser.add_argument('-s', '--swap', action="store_true", help='swap endianness')
-parser.add_argument('-d', '--delimiter', action="store_true", help='add \\x delimiter')
-parser.add_argument('-r', '--remove', action="store_true", help='remove \\x delimiter')
+parser.add_argument('-d', '--delimiter', action="store_true", help='add the \\x delimiter')
+parser.add_argument('-r', '--remove', action="store_true", help='remove the \\x delimiter')
 parser.add_argument('-c', '--copy', action="store_true", help='copy the adapted bytestream to the clipboard')
 args = parser.parse_args()
 
