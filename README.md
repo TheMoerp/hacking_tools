@@ -6,6 +6,7 @@ To install the needed python modules enter:
 ## adapt_bytestream
 #### Features:
 
+ - ascii string to hex
  - swap endianness of a bytestream
  - add the delimiter \x to a bytestream
  - remove the delimiter \x from a bytestream
@@ -14,5 +15,5 @@ To install the needed python modules enter:
 
 #### Usage
 
-    python3 adapt_bytestream.py [-h] [-q] [-s] [-d] [-r] [-c] [-f FILE] [-n NAME] bytestream
+    python3 adapt_bytestream.py [-h] [-q] [-s] [-d] [-r] [-a] [-c] [-f FILE] [-n NAME] bytestream
 Run it with the `-h` or `--help` flag to get a more detailed description of each option.

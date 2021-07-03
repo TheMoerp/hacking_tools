@@ -1,2 +1,5 @@
 Adapted string: \x74\x65\x73\x74
 Adapted string: \x74\x65\x73\x74
+Adapted string: \x2f\x62\x69\x6e\x2f\x73\x68
+Adapted string: 2f62696e2f7368
+Adapted string: 68732f6e69622f
