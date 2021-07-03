@@ -5,13 +5,18 @@ import pyperclip
 # Argument parser
 parser = argparse.ArgumentParser(description='Little tool to help building exploits')
 parser.add_argument('bytestream', help='bytestream you want to adapt. acceptable formats: 0xnn...nn, nn..nn, \\xnn...\\xnn')
+parser.add_argument('-q', '--quiet', action="store_true", help='do not print the adapted bytestream to stdout')
 parser.add_argument('-s', '--swap', action="store_true", help='swap endianness')
 parser.add_argument('-d', '--delimiter', action="store_true", help='add the \\x delimiter')
 parser.add_argument('-r', '--remove', action="store_true", help='remove the \\x delimiter')
 parser.add_argument('-c', '--copy', action="store_true", help='copy the adapted bytestream to the clipboard (only for Windows)')
+parser.add_argument('-f', '--file', help='write output into a file defaultname: bytestream_save.txt', default='bytestream_save.txt')
+parser.add_argument('-n', '--name', help='name of the stream for saving into a file')
 args = parser.parse_args()
 
 byte_stream = args.bytestream
+file = args.file
+stream_name = args.name
 
 # Checks if -d and -r is set
 if args.delimiter and args.remove:
@@ -52,7 +57,20 @@ else:
 
 
 # Prints adapted bytestream
-print(f"\nAdapted bytestream: {byte_stream}\n")
+if stream_name:
+    if not args.quiet:
+        print(f"\n{stream_name}: {byte_stream}\n")
+    if file:
+        f = open(file, 'a')
+        f.write(f"{stream_name}: {byte_stream}\n")
+        f.close()
+else:
+    if not args.quiet:
+        print(f"\nAdapted bytestream: {byte_stream}\n")
+    if file:
+        f = open(file, 'a')
+        f.write(f"Adapted bytestream: {byte_stream}\n")
+        f.close()
 
 # Copys adapted bytestream to the clipboard (only works on Windows)
 if args.copy:
