@@ -1,0 +1,2 @@
+Adapted string: \x74\x65\x73\x74
+Adapted string: \x74\x65\x73\x74
