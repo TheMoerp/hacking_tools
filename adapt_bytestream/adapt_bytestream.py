@@ -2,6 +2,7 @@ import argparse
 import textwrap
 import pyperclip
 
+
 # Argument parser
 parser = argparse.ArgumentParser(description='Little tool to help building exploits')
 parser.add_argument('bytestream', help='bytestream you want to adapt. acceptable formats: 0xnn...nn, nn..nn, \\xnn...\\xnn')
