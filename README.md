@@ -6,8 +6,6 @@ To install the needed python modules enter:
 ## adapt_bytestream
 #### Features:
 
-
- - swap endianness of a bytestream
  - add the delimiter \x to a bytestream
  - remove the delimiter \x from a bytestream
  - copy the adapted bytestream to the clipboard
